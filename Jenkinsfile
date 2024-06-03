@@ -28,7 +28,11 @@ pipeline {
         }
         stage('Deploy App'){
                 steps{
-                kubernetesApply(configs: "./DeployK8s.yaml","./ServiceK8s.yaml")
+               withCredentials(bindings: [
+                                     string(credentialsId: 'k8s-token', variable: 'api_token')
+                                     ]) {
+                           bat 'kubectl --token $api_token --server http://127.0.0.1:64124 --insecure-skip-tls-verify=true apply -f DeployK8s.yaml '
+                         }
         }
 
 
