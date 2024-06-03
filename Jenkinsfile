@@ -31,6 +31,6 @@ pipeline {
                kubernetesApply(configs: "./DeployK8s.yaml","./ServiceK8s.yaml")
         }
 
-    }
+
     }
 }
