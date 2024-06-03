@@ -18,19 +18,20 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                  docker.withRegistry('https://registry.hub.docker.com','dcoker-credentials'){
-                      def dockerImageBuild = docker.build("vifa951002/msc-registry-server")
-                     dockerImageBuild.push()
-                  }
-              }
+                    docker.withRegistry('https://registry.hub.docker.com','dcoker-credentials'){
+                        def dockerImageBuild = docker.build("vifa951002/msc-registry-server")
+                        dockerImageBuild.push()
+                    }
+                }
 
             }
         }
         stage('Deploy App'){
-             steps{
-               kubernetesApply(configs: "./DeployK8s.yaml","./ServiceK8s.yaml")
+                steps{
+                kubernetesApply(configs: "./DeployK8s.yaml","./ServiceK8s.yaml")
         }
 
 
     }
+}
 }
