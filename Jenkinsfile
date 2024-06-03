@@ -28,8 +28,8 @@ pipeline {
         }
         stage('Deploy App'){
              steps{
-               bat 'kubectl apply ./DeployK8s.yaml'
-               bat 'kubectl apply ./ServiceK8s.yaml'
+               bat 'kubectl apply -f ./DeployK8s.yaml'
+               bat 'kubectl apply -f ./ServiceK8s.yaml'
         }
 
     }
