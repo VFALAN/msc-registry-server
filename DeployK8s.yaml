@@ -16,21 +16,4 @@ spec:
         - name: msc-registry-server
           image: vifa951002/msc-registry-server
           ports:
-            - containerPort: 8181
-          env:
-            - name: spring.datasource.username
-              value: "root"
-            - name: spring.datesource.password
-              value: "vifa9510"
-            - name: spring.jpa.hibernate.ddl-auto
-              value: "none"  # Esto es un ejemplo, ajusta según tus necesidades
-            - name: spring.jpa.generate-ddl
-              value: "true"  # Esto es un ejemplo, ajusta según tus necesidades
-            - name: spring.jpa.show-sql
-              value: "true"  # Esto es un ejemplo, ajusta según tus necesidades
-            - name: spring.jpa.database-platform
-              value: "org.hibernate.dialect.MySQL8Dialect"  # Esto es un ejemplo, ajusta según tus necesidades
-            - name: msc.security.secret-key
-              value: "NDQxQlROR1NuY2JjMTVOVFZBeURzZk5saXVNdmNKUWtiTGo3eEtoeVdVVkJLanBvWHludFFwWEM2amxCaXBscw"
-            - name: spring.datasource.url
-              value: "jdbc:mysql://msc-dev-mysql-service:13856/msc_development"
+            - containerPort: 8761
