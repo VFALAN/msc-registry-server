@@ -28,8 +28,9 @@ pipeline {
         }
         stage('Deploy App'){
              steps{
-               bat 'kubectl apply -f ./DeployK8s.yaml'
-               bat 'kubectl apply -f ./ServiceK8s.yaml'
+                script{
+                kubernetesDeploy(configs:"DeployK8s.yaml","ServiceK8s.yaml")
+                }
         }
 
     }
