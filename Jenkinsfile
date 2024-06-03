@@ -31,7 +31,7 @@ pipeline {
                withCredentials(bindings: [
                                      string(credentialsId: 'k8s-token', variable: 'api_token')
                                      ]) {
-                           bat 'kubectl --token $api_token --server http://127.0.0.1:64124 --insecure-skip-tls-verify=true apply -f DeployK8s.yaml '
+                           bat 'kubectl --token $api_token --server http://127.0.0.1:64124 --validate=false --insecure-skip-tls-verify=true apply -f DeployK8s.yaml '
                          }
         }
 
