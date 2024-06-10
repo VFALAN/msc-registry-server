@@ -5,8 +5,9 @@ metadata:
 spec:
   selector:
     app: msc-registry-server
-  type: LoadBalancer
+  type: NodePort
   ports:
     - protocol: TCP
       port: 8761
       targetPort: 8761
+      name: registry-server
