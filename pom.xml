@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.msc.rs</groupId>
 	<artifactId>msc-registry-server</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1-BETA</version>
 	<name>msc-registry-server</name>
 	<description>Registry Server</description>
 	<properties>
@@ -28,6 +28,16 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.github.loki4j</groupId>
+			<artifactId>loki-logback-appender</artifactId>
+			<version>1.5.1</version>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>

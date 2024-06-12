@@ -26,7 +26,7 @@ pipeline {
 
             }
         }
-        stage('Deploy App'){
+        /* stage('Deploy App'){
                 steps{
                withCredentials(bindings: [
                                      string(credentialsId: 'k8s-token', variable: 'api_token')
@@ -37,6 +37,6 @@ pipeline {
         }
 
 
-    }
+    } */
 }
 }
