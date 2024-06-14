@@ -1,19 +1,19 @@
 
 pipeline {
-    agent any  // Use any available agent
+    agent any
 
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'development', // Replace 'main' with your branch name
-                    credentialsId: 'git-hub-credentials', // Replace with your Git credentials ID (if needed)
-                    url: 'https://github.com/VFALAN/msc-registry-server.git' // Replace with your Git repository URL
+                git branch: 'development',
+                    credentialsId: 'git-hub-credentials',
+                    url: 'https://github.com/VFALAN/msc-registry-server.git'
             }
         }
         stage('Build Project') {
             steps {
                 bat 'set LOKI_URL=http://localhost:3100/api/loki/v1/push'
-                bat 'mvn clean package' // Adjust command for your build tool (e.g., Gradle: ./gradlew clean build)
+                bat 'mvn clean package'
             }
         }
         stage('Build Docker Image') {
